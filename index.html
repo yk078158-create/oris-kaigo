@@ -851,22 +851,60 @@
   @media (max-width: 900px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    section { padding: 5rem 2rem; }
+    section { padding: 5rem 1.5rem; }
 
     .hero {
       grid-template-columns: 1fr;
       min-height: auto;
     }
 
-    .hero-left { padding: 5rem 2rem 3rem; }
-    .hero-right { padding: 2rem; }
+    .hero-left { padding: 5rem 1.5rem 3rem; }
+    .hero-right { padding: 1.5rem; }
     .hero-visual { max-width: 340px; margin: 0 auto; }
     .card-1, .card-2 { display: none; }
+
+    /* ボタンを縦並びに、文字が縦にならないよう修正 */
+    .hero-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .btn-primary, .btn-secondary {
+      text-align: center;
+      white-space: nowrap;
+      padding: 1rem 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    /* 本文の改行を自然に */
+    .hero-sub {
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    /* バッジの折り返し */
+    .hero-badges { gap: 0.6rem; }
+    .badge { font-size: 0.78rem; padding: 0.5rem 0.9rem; }
 
     .why-grid { grid-template-columns: 1fr; }
     .jobs-inner { grid-template-columns: 1fr; gap: 3rem; }
     .voice-grid { grid-template-columns: 1fr; }
     .contact-tel { font-size: 1.8rem; }
+
+    /* 募集要項テーブルの文字崩れ修正 */
+    .jobs-row { grid-template-columns: 5.5rem 1fr; }
+    .jobs-label { font-size: 0.75rem; padding: 1rem 0.6rem; }
+    .jobs-value {
+      font-size: 0.85rem;
+      padding: 1rem 1rem;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+    }
+
+    .highlight-text { white-space: nowrap; }
+
+    /* グリーンカードの文字改行修正 */
+    .visual-desc { word-break: keep-all; }
   }
 </style>
 </head>
@@ -1144,7 +1182,7 @@
     <div class="contact-tel">📞 03-4296-3418</div>
     <div class="contact-hours">受付時間：平日 9:00〜17:00</div>
     <div class="contact-buttons">
-      <a href="mailto:info@oris-kaigo.com" class="btn-white">メールで問い合わせる</a>
+      <a href="/cdn-cgi/l/email-protection#98f1f6fef7d8f7eaf1ebb5f3f9f1fff7b6fbf7f5" class="btn-white">メールで問い合わせる</a>
       <a href="tel:0342963418" class="btn-outline-white">電話で問い合わせる</a>
     </div>
   </div>
@@ -1155,7 +1193,7 @@
   <span>ORIS</span> 重度訪問介護事業所 ｜ 東京都足立区 ｜ © 2024 株式会社ORIS
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Reveal on scroll
   const reveals = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
@@ -1171,10 +1209,4 @@
 
   reveals.forEach(el => observer.observe(el));
 
-  // Stagger why cards
-  document.querySelectorAll('.why-card').forEach((card, i) => {
-    card.style.transitionDelay = `${i * 0.08}s`;
-  });
-</script>
-</body>
-</html>
+  // Stagger why c
