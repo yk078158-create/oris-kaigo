@@ -1,0 +1,1180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ORIS｜重度訪問介護ヘルパー募集</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #5a8a6a;
+    --sage-light: #8ab89a;
+    --sage-pale: #e8f3ec;
+    --cream: #faf8f4;
+    --warm-white: #fffef9;
+    --charcoal: #2c3030;
+    --mid: #5a6060;
+    --accent: #d4845a;
+    --accent-light: #f0c4aa;
+    --gold: #c4a05a;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--warm-white);
+    color: var(--charcoal);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAV ===== */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(250,248,244,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(90,138,106,0.15);
+  }
+
+  .nav-logo {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--sage);
+    letter-spacing: 0.1em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--mid);
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--sage); }
+
+  .nav-cta {
+    background: var(--accent);
+    color: white !important;
+    padding: 0.6rem 1.4rem;
+    border-radius: 2rem;
+    font-weight: 700 !important;
+    transition: background 0.3s, transform 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: #c06040 !important;
+    transform: translateY(-1px);
+    color: white !important;
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 70% 50%, rgba(90,138,106,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(212,132,90,0.06) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5rem 4rem 5rem 6rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: var(--sage-pale);
+    color: var(--sage);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    width: fit-content;
+    animation: fadeUp 0.8s ease both;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .hero-title {
+    font-family: 'Noto Serif JP', serif;
+    font-weight: 900;
+    font-size: clamp(2.4rem, 4vw, 3.8rem);
+    line-height: 1.3;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--sage);
+    position: relative;
+  }
+
+  .hero-title em::after {
+    content: '';
+    position: absolute;
+    bottom: 2px; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--sage-light), transparent);
+    border-radius: 2px;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.9;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.8s 0.2s ease both;
+  }
+
+  .hero-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+
+  .badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: white;
+    border: 1.5px solid var(--sage-light);
+    color: var(--sage);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 0.55rem 1.1rem;
+    border-radius: 2rem;
+    box-shadow: 0 2px 8px rgba(90,138,106,0.1);
+  }
+
+  .badge-icon { font-size: 1rem; }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    padding: 1rem 2.2rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(212,132,90,0.35);
+  }
+
+  .btn-primary:hover {
+    background: #c06040;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgba(212,132,90,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--sage);
+    padding: 1rem 2.2rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid var(--sage);
+    transition: all 0.3s;
+  }
+
+  .btn-secondary:hover {
+    background: var(--sage);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 3rem;
+    animation: fadeLeft 0.9s 0.2s ease both;
+  }
+
+  .hero-visual {
+    width: 100%;
+    max-width: 480px;
+    background: var(--sage);
+    border-radius: 2rem 2rem 8rem 2rem;
+    aspect-ratio: 4/5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(90,138,106,0.3);
+  }
+
+  .hero-visual-inner {
+    text-align: center;
+    color: white;
+    padding: 3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-visual::before {
+    content: '';
+    position: absolute;
+    top: -30%; left: -20%;
+    width: 70%; height: 70%;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+  }
+
+  .hero-visual::after {
+    content: '';
+    position: absolute;
+    bottom: -20%; right: -15%;
+    width: 50%; height: 50%;
+    background: rgba(0,0,0,0.1);
+    border-radius: 50%;
+  }
+
+  .visual-big-num {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,0.15);
+    position: absolute;
+    top: 1.5rem; right: 2rem;
+  }
+
+  .visual-icon {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .visual-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .visual-desc {
+    font-size: 0.85rem;
+    opacity: 0.85;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .floating-card {
+    position: absolute;
+    background: white;
+    border-radius: 1rem;
+    padding: 1rem 1.3rem;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .card-1 {
+    bottom: 15%;
+    left: -5%;
+    animation-delay: 0s;
+  }
+
+  .card-2 {
+    top: 20%;
+    right: -8%;
+    animation-delay: 2s;
+  }
+
+  .card-dot {
+    width: 10px; height: 10px;
+    background: var(--sage);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .card-dot.orange { background: var(--accent); }
+
+  /* ===== SECTION COMMON ===== */
+  section { padding: 7rem 6rem; }
+
+  .section-tag {
+    display: inline-block;
+    background: var(--sage-pale);
+    color: var(--sage);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    font-weight: 900;
+    line-height: 1.4;
+    color: var(--charcoal);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-lead {
+    font-size: 1rem;
+    color: var(--mid);
+    line-height: 1.9;
+    max-width: 600px;
+    font-weight: 300;
+  }
+
+  /* ===== WHY ORIS ===== */
+  .why {
+    background: var(--sage-pale);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why::before {
+    content: 'WHY ORIS';
+    position: absolute;
+    top: -1rem; left: -1rem;
+    font-size: 8rem;
+    font-weight: 900;
+    font-family: 'Noto Serif JP', serif;
+    color: rgba(90,138,106,0.07);
+    white-space: nowrap;
+    pointer-events: none;
+    letter-spacing: 0.05em;
+  }
+
+  .why-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .why-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .why-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(90,138,106,0.2);
+  }
+
+  .why-card::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -0.5rem; right: 1.5rem;
+    font-size: 4rem;
+    font-weight: 900;
+    font-family: 'Noto Serif JP', serif;
+    color: var(--sage-pale);
+    line-height: 1;
+  }
+
+  .why-icon {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .why-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .why-card p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  .why-card-accent {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--sage), var(--sage-light));
+    border-radius: 0 0 1.5rem 1.5rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .why-card:hover .why-card-accent { transform: scaleX(1); }
+
+  /* ===== JOBS ===== */
+  .jobs {
+    background: var(--warm-white);
+  }
+
+  .jobs-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .jobs-table {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+    background: white;
+  }
+
+  .jobs-table-header {
+    background: var(--sage);
+    color: white;
+    padding: 1.5rem 2rem;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+  }
+
+  .jobs-row {
+    display: grid;
+    grid-template-columns: 7rem 1fr;
+    border-bottom: 1px solid var(--sage-pale);
+  }
+
+  .jobs-row:last-child { border-bottom: none; }
+
+  .jobs-label {
+    background: var(--sage-pale);
+    color: var(--sage);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 1.2rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  .jobs-value {
+    padding: 1.2rem 1.5rem;
+    font-size: 0.88rem;
+    color: var(--charcoal);
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+  }
+
+  .highlight-text {
+    color: var(--accent);
+    font-weight: 700;
+  }
+
+  /* ===== VOICE ===== */
+  .voice {
+    background: linear-gradient(135deg, var(--charcoal) 0%, #3a4545 100%);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .voice::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+      radial-gradient(ellipse 50% 60% at 80% 20%, rgba(90,138,106,0.2) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 10% 80%, rgba(212,132,90,0.15) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .voice-header {
+    text-align: center;
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .voice-header .section-tag {
+    background: rgba(90,138,106,0.3);
+    color: var(--sage-light);
+  }
+
+  .voice-header .section-title { color: white; }
+
+  .voice-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .voice-card {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 1.5rem;
+    padding: 2.5rem 2rem;
+    backdrop-filter: blur(10px);
+    transition: background 0.3s, transform 0.3s;
+  }
+
+  .voice-card:hover {
+    background: rgba(255,255,255,0.12);
+    transform: translateY(-4px);
+  }
+
+  .voice-quote {
+    font-size: 3rem;
+    color: var(--sage-light);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-family: Georgia, serif;
+  }
+
+  .voice-text {
+    font-size: 0.9rem;
+    line-height: 1.9;
+    color: rgba(255,255,255,0.85);
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+  }
+
+  .voice-person {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .voice-avatar {
+    width: 40px; height: 40px;
+    background: linear-gradient(135deg, var(--sage), var(--sage-light));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+  }
+
+  .voice-name {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: white;
+  }
+
+  .voice-role {
+    font-size: 0.75rem;
+    color: var(--sage-light);
+    margin-top: 0.1rem;
+  }
+
+  /* ===== FLOW ===== */
+  .flow {
+    background: var(--cream);
+  }
+
+  .flow-inner {
+    max-width: 900px;
+    margin: 4rem auto 0;
+  }
+
+  .flow-steps {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .flow-step {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+    gap: 2rem;
+    align-items: start;
+    padding-bottom: 2.5rem;
+    position: relative;
+  }
+
+  .flow-step:last-child { padding-bottom: 0; }
+
+  .flow-step-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .flow-num {
+    width: 56px; height: 56px;
+    background: var(--sage);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.2rem;
+    font-weight: 900;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 16px rgba(90,138,106,0.3);
+  }
+
+  .flow-line {
+    width: 2px;
+    flex: 1;
+    background: linear-gradient(to bottom, var(--sage-light), var(--sage-pale));
+    min-height: 40px;
+    margin-top: 4px;
+  }
+
+  .flow-step:last-child .flow-line { display: none; }
+
+  .flow-content {
+    padding-top: 0.8rem;
+  }
+
+  .flow-content h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .flow-content p {
+    font-size: 0.88rem;
+    color: var(--mid);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+
+  /* ===== CONTACT ===== */
+  .contact {
+    background: var(--sage);
+    color: white;
+    text-align: center;
+    padding: 7rem 3rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 50% 50%, rgba(255,255,255,0.06) 0%, transparent 70%);
+  }
+
+  .contact-inner { position: relative; z-index: 1; }
+
+  .contact .section-tag {
+    background: rgba(255,255,255,0.2);
+    color: white;
+  }
+
+  .contact .section-title { color: white; text-align: center; }
+
+  .contact-tel {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
+    margin: 1.5rem 0 0.5rem;
+  }
+
+  .contact-hours {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+  }
+
+  .contact-buttons {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--sage);
+    padding: 1.1rem 2.5rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  }
+
+  .btn-outline-white {
+    background: transparent;
+    color: white;
+    padding: 1.1rem 2.5rem;
+    border-radius: 3rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    border: 2px solid rgba(255,255,255,0.6);
+    transition: all 0.3s;
+  }
+
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
+    border-color: white;
+  }
+
+  /* ===== FOOTER ===== */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 2.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  footer span { color: var(--sage-light); font-weight: 700; }
+
+  /* ===== ANIMATIONS ===== */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 2rem; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+
+    .hero-left { padding: 5rem 2rem 3rem; }
+    .hero-right { padding: 2rem; }
+    .hero-visual { max-width: 340px; margin: 0 auto; }
+    .card-1, .card-2 { display: none; }
+
+    .why-grid { grid-template-columns: 1fr; }
+    .jobs-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .voice-grid { grid-template-columns: 1fr; }
+    .contact-tel { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">ORIS</div>
+  <ul class="nav-links">
+    <li><a href="#why">ORISの特徴</a></li>
+    <li><a href="#jobs">求人情報</a></li>
+    <li><a href="#voice">スタッフの声</a></li>
+    <li><a href="#flow">応募の流れ</a></li>
+    <li><a href="#contact" class="nav-cta">応募する</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg-pattern"></div>
+
+  <div class="hero-left">
+    <div class="hero-tag">重度訪問介護事業所 ORIS — 東京・埼玉</div>
+    <h1 class="hero-title">
+      「支える」が、<br>
+      <em>一生の誇り</em>になる仕事。
+    </h1>
+    <p class="hero-sub">
+      ORISは、重い障害がある方の24時間の暮らしを<br>
+      真摯に支えるヘルパーを募集しています。<br>
+      経験不問。あなたの「思いやり」だけが必要です。
+    </p>
+    <div class="hero-badges">
+      <div class="badge"><span class="badge-icon">✓</span> 未経験・経験不問</div>
+      <div class="badge"><span class="badge-icon">✓</span> 週1日〜OK</div>
+      <div class="badge"><span class="badge-icon">✓</span> 研修・資格補助あり</div>
+      <div class="badge"><span class="badge-icon">✓</span> 正社員・パート両対応</div>
+    </div>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">今すぐ応募する</a>
+      <a href="#jobs" class="btn-secondary">求人を見る</a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-visual">
+      <div class="visual-big-num">24h</div>
+      <div class="hero-visual-inner">
+        <span class="visual-icon">🌿</span>
+        <div class="visual-title">「自分らしく生きる」を、<br>共につくる。</div>
+        <div class="visual-desc">
+          障害や病気があっても、<br>
+          あきらめない社会をつくります。<br>
+          あなたの力が必要です。
+        </div>
+      </div>
+    </div>
+    <div class="floating-card card-1">
+      <div class="card-dot"></div>
+      東京・埼玉全域で活動中
+    </div>
+    <div class="floating-card card-2">
+      <div class="card-dot orange"></div>
+      資格取得費用 全額補助
+    </div>
+  </div>
+</section>
+
+<!-- WHY ORIS -->
+<section class="why" id="why">
+  <div class="why-header reveal">
+    <div class="section-tag">FEATURES</div>
+    <h2 class="section-title">ORISで働く5つの理由</h2>
+    <p class="section-lead" style="margin: 0 auto;">
+      介護の仕事に興味はあるけど不安、という方へ。<br>ORISが選ばれる理由をお伝えします。
+    </p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal" data-num="01">
+      <span class="why-icon">🌱</span>
+      <h3>未経験・無資格でも大丈夫</h3>
+      <p>入社後に研修・同行があるので、介護の経験がなくても安心してスタートできます。「人の役に立ちたい」という気持ちが一番大切です。</p>
+      <div class="why-card-accent"></div>
+    </div>
+    <div class="why-card reveal" data-num="02">
+      <span class="why-icon">📚</span>
+      <h3>資格取得費用を全額補助</h3>
+      <p>重度訪問介護の資格取得費用はORISが全額負担。働きながら一生モノの国家資格・専門スキルを身につけることができます。</p>
+      <div class="why-card-accent"></div>
+    </div>
+    <div class="why-card reveal" data-num="03">
+      <span class="why-icon">🗓️</span>
+      <h3>週1日〜、柔軟なシフト制</h3>
+      <p>日勤・夜勤・週1日など、あなたのライフスタイルに合わせて勤務形態を選択可能。学業・副業・子育て中の方も歓迎です。</p>
+      <div class="why-card-accent"></div>
+    </div>
+    <div class="why-card reveal" data-num="04">
+      <span class="why-icon">🤝</span>
+      <h3>チームで支え合う職場</h3>
+      <p>一人で抱え込まない文化。困ったことはすぐ相談できる体制と、安心のサポートチームが常にそばにいます。</p>
+      <div class="why-card-accent"></div>
+    </div>
+    <div class="why-card reveal" data-num="05">
+      <span class="why-icon">👨‍👩‍👧</span>
+      <h3>20代〜シニアまで幅広く活躍</h3>
+      <p>年齢・性別・国籍・経歴は問いません。多様な個性とバックグラウンドを持つスタッフが、互いを尊重しながら働いています。</p>
+      <div class="why-card-accent"></div>
+    </div>
+    <div class="why-card reveal" data-num="06">
+      <span class="why-icon">❤️</span>
+      <h3>ご利用者と深く関わる仕事</h3>
+      <p>単発ではなく、継続的にご利用者の24時間を支えます。信頼関係を築きながら、人生に深く寄り添う介護ができます。</p>
+      <div class="why-card-accent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- JOBS -->
+<section class="jobs" id="jobs">
+  <div class="jobs-inner">
+    <div class="reveal">
+      <div class="section-tag">RECRUIT</div>
+      <h2 class="section-title">募集要項</h2>
+      <p class="section-lead">
+        あなたのペースで、あなたらしく働ける環境を用意しています。まずはお気軽にご相談ください。
+      </p>
+      <br><br>
+      <a href="#contact" class="btn-primary">この求人に応募する</a>
+    </div>
+    <div class="jobs-table reveal">
+      <div class="jobs-table-header">🌿 重度訪問介護ヘルパー（正社員・パート）</div>
+      <div class="jobs-row">
+        <div class="jobs-label">職種</div>
+        <div class="jobs-value">重度訪問介護ヘルパー</div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">雇用形態</div>
+        <div class="jobs-value">正社員・パート（選択可）</div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">業務内容</div>
+        <div class="jobs-value" style="display:block; padding: 1.2rem 1.5rem;">
+          生活サポート（食事・入浴等）<br>
+          見守り・外出支援<br>
+          医療的ケア（資格取得後）
+        </div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">応募資格</div>
+        <div class="jobs-value"><span class="highlight-text">年齢・経歴・資格 不問</span></div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">勤務時間</div>
+        <div class="jobs-value"><span class="highlight-text">週1日〜OK</span>、日勤・夜勤あり</div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">勤務地</div>
+        <div class="jobs-value">東京都足立区・埼玉県全域</div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">資格補助</div>
+        <div class="jobs-value"><span class="highlight-text">資格取得費用 全額補助</span></div>
+      </div>
+      <div class="jobs-row">
+        <div class="jobs-label">お問合せ</div>
+        <div class="jobs-value">平日 9:00〜17:00</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VOICE -->
+<section class="voice" id="voice">
+  <div class="voice-header reveal">
+    <div class="section-tag">STAFF VOICE</div>
+    <h2 class="section-title">スタッフの声</h2>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card reveal">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">全くの未経験でしたが、研修がとても丁寧で安心して始められました。ご利用者さんの「ありがとう」が毎日の原動力です。</p>
+      <div class="voice-person">
+        <div class="voice-avatar">👩</div>
+        <div>
+          <div class="voice-name">Aさん（28歳・女性）</div>
+          <div class="voice-role">入社1年目 / 元事務職</div>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card reveal">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">週2〜3日から始めて、今は正社員に。資格取得の費用も全額出してもらえて、スキルアップできました。チームの雰囲気も最高です。</p>
+      <div class="voice-person">
+        <div class="voice-avatar">👨</div>
+        <div>
+          <div class="voice-name">Bさん（35歳・男性）</div>
+          <div class="voice-role">入社2年目 / 元飲食業</div>
+        </div>
+      </div>
+    </div>
+    <div class="voice-card reveal">
+      <div class="voice-quote">"</div>
+      <p class="voice-text">子育て中でも柔軟にシフトを組んでもらえています。「人の生活を支える」という仕事に誇りを感じています。</p>
+      <div class="voice-person">
+        <div class="voice-avatar">👩</div>
+        <div>
+          <div class="voice-name">Cさん（42歳・女性）</div>
+          <div class="voice-role">パート / 子育て中</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow" id="flow">
+  <div style="text-align:center; margin-bottom: 1rem;" class="reveal">
+    <div class="section-tag">HOW TO APPLY</div>
+    <h2 class="section-title">応募の流れ</h2>
+  </div>
+  <div class="flow-inner">
+    <div class="flow-steps">
+      <div class="flow-step reveal">
+        <div class="flow-step-left">
+          <div class="flow-num">1</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h3>お問い合わせ・応募</h3>
+          <p>フォームまたはお電話からご連絡ください。「話を聞きたい」だけのご相談も大歓迎です。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-left">
+          <div class="flow-num">2</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h3>カジュアル面談</h3>
+          <p>担当者がORISの仕事・雰囲気・働き方について詳しくご説明します。気軽にご質問ください。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-left">
+          <div class="flow-num">3</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h3>研修・資格取得サポート</h3>
+          <p>入社後はORISが研修費・資格取得費を全額サポート。未経験の方も安心してスタートできます。</p>
+        </div>
+      </div>
+      <div class="flow-step reveal">
+        <div class="flow-step-left">
+          <div class="flow-num">4</div>
+          <div class="flow-line"></div>
+        </div>
+        <div class="flow-content">
+          <h3>現場デビュー</h3>
+          <p>研修後は先輩ヘルパーとの同行からスタート。一人になっても相談できる環境があります。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner reveal">
+    <div class="section-tag">CONTACT</div>
+    <h2 class="section-title">一歩踏み出してみませんか</h2>
+    <p style="color: rgba(255,255,255,0.8); font-weight: 300; font-size: 1rem; line-height: 1.9; margin-bottom: 1.5rem;">
+      「話だけ聞きたい」「まず見学したい」など、どんな相談でも歓迎です。
+    </p>
+    <div class="contact-tel">📞 03-4296-3418</div>
+    <div class="contact-hours">受付時間：平日 9:00〜17:00</div>
+    <div class="contact-buttons">
+      <a href="mailto:info@oris-kaigo.com" class="btn-white">メールで問い合わせる</a>
+      <a href="tel:0342963418" class="btn-outline-white">電話で問い合わせる</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>ORIS</span> 重度訪問介護事業所 ｜ 東京都足立区 ｜ © 2024 株式会社ORIS
+</footer>
+
+<script>
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Stagger why cards
+  document.querySelectorAll('.why-card').forEach((card, i) => {
+    card.style.transitionDelay = `${i * 0.08}s`;
+  });
+</script>
+</body>
+</html>
