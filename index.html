@@ -904,43 +904,16 @@
 </head>
 <body>
 <!-- INTRO -->
-<div id="intro" style="
-  <!-- INTRO -->
-<div id="intro" style="
-  position: fixed;
-  inset: 0;
-  background: #faf8f4;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  transition: opacity 0.8s ease;
-  gap: 2rem;
-">
-  <p style="
-    font-family: 'Noto Serif JP', serif;
-    font-size: clamp(1rem, 3vw, 1.4rem);
-    font-weight: 700;
-    color: #5a8a6a;
-    letter-spacing: 0.1em;
-    opacity: 0;
-    animation: introFadeUp 1s 0.3s ease forwards;
-  ">「自分らしく生きる」を、共につくる。</p>
-  <img src="oris-logo.jpg" alt="ORIS" style="
-    width: min(280px, 60vw);
-    opacity: 0;
-    animation: introFadeUp 1s 0.6s ease forwards;
-  ">
+<div id="intro" style="position:fixed;inset:0;background:#faf8f4;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.8s ease;gap:2rem;">
+  <p style="font-family:'Noto Serif JP',serif;font-size:clamp(1rem,3vw,1.4rem);font-weight:700;color:#5a8a6a;letter-spacing:0.1em;opacity:0;animation:introFadeUp 1s 0.3s ease forwards;">「自分らしく生きる」を、共につくる。</p>
+  <img src="oris-logo.jpg" alt="ORIS" style="width:min(280px,60vw);opacity:0;animation:introFadeUp 1s 0.6s ease forwards;">
 </div>
-
 <style>
 @keyframes introFadeUp {
-  from { opacity: 0; transform: translateY(16px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity:0; transform:translateY(16px); }
+  to { opacity:1; transform:translateY(0); }
 }
 </style>
-
 <script>
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -948,16 +921,6 @@ window.addEventListener('load', () => {
     intro.style.opacity = '0';
     setTimeout(() => intro.style.display = 'none', 800);
   }, 2500);
-});
-</script>
-  
-<script>
-window.addEventListener('load', () => {
-  setTimeout(() => {
-    const intro = document.getElementById('intro');
-    intro.style.opacity = '0';
-    setTimeout(() => intro.style.display = 'none', 800);
-  }, 1800);
 });
 </script>
   
