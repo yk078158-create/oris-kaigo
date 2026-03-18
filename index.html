@@ -14,7 +14,7 @@
     --cream: #faf8f4;
     --warm-white: #fffef9;
     --charcoal: #2c3030;
-    --mid: #5a6060;
+    --mid: #2a3535;
     --accent: #d4845a;
     --accent-light: #f0c4aa;
   }
@@ -153,7 +153,7 @@
     color: var(--mid);
     line-height: 2;
     margin-bottom: 2.5rem;
-    font-weight: 300;
+    font-weight: 400;
     animation: fadeUp 0.8s 0.2s ease both;
     word-break: keep-all;
   }
@@ -281,10 +281,11 @@
   }
   .visual-body {
     font-size: 0.82rem;
-    opacity: 0.85;
+    color: rgba(255,255,255,0.95);
     line-height: 1.9;
-    font-weight: 300;
+    font-weight: 400;
     word-break: keep-all;
+    text-wrap: pretty;
   }
   .hero-float {
     position: absolute;
@@ -336,7 +337,7 @@
     font-size: 0.95rem;
     color: var(--mid);
     line-height: 1.95;
-    font-weight: 300;
+    font-weight: 400;
     word-break: keep-all;
   }
   .center { text-align: center; }
@@ -358,7 +359,7 @@
     font-size: 0.97rem;
     color: var(--mid);
     line-height: 2.1;
-    font-weight: 300;
+    font-weight: 400;
     overflow-wrap: anywhere;
   }
 
@@ -377,7 +378,7 @@
     font-size: 0.92rem;
     color: var(--mid);
     line-height: 2.1;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.2rem;
     word-break: keep-all;
   }
@@ -484,7 +485,7 @@
     font-size: 0.82rem;
     color: var(--mid);
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 400;
     display: flex;
     align-items: flex-start;
     gap: 0.5rem;
@@ -563,7 +564,7 @@
     font-size: 0.84rem;
     color: var(--mid);
     line-height: 1.9;
-    font-weight: 300;
+    font-weight: 400;
     word-break: keep-all;
   }
   .target-note p + p { margin-top: 0.5rem; }
@@ -631,7 +632,7 @@
     font-size: 0.85rem;
     color: var(--mid);
     line-height: 1.85;
-    font-weight: 300;
+    font-weight: 400;
     word-break: keep-all;
   }
 
@@ -732,7 +733,7 @@
     font-size: 0.88rem;
     line-height: 1.9;
     color: rgba(255,255,255,0.85);
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.5rem;
     overflow-wrap: anywhere;
   }
@@ -808,7 +809,7 @@
     padding: 0 0 0 2.8rem;
   }
   .faq-item.open .faq-ans { max-height: 280px; padding-bottom: 1.4rem; }
-  .faq-ans p { font-size: 0.88rem; color: var(--mid); line-height: 1.95; font-weight: 300; word-break: keep-all; }
+  .faq-ans p { font-size: 0.88rem; color: var(--mid); line-height: 1.95; font-weight: 400; word-break: keep-all; }
 
   /* ========== RECRUIT BANNER ========== */
   .recruit-banner {
@@ -865,7 +866,7 @@
     color: var(--charcoal);
     margin-bottom: 0.25rem;
   }
-  .reason-body p { font-size: 0.8rem; color: var(--mid); line-height: 1.7; font-weight: 300; word-break: keep-all; }
+  .reason-body p { font-size: 0.8rem; color: var(--mid); line-height: 1.7; font-weight: 400; word-break: keep-all; }
   .jobs-table {
     border-radius: 1.4rem;
     overflow: hidden;
@@ -934,12 +935,12 @@
     margin: 1.5rem 0 0.4rem;
     white-space: nowrap;
   }
-  .contact-hours { font-size: 0.83rem; opacity: 0.78; margin-bottom: 2.2rem; font-weight: 300; }
+  .contact-hours { font-size: 0.83rem; opacity: 0.78; margin-bottom: 2.2rem; font-weight: 400; }
   .contact-lead {
     font-size: 0.92rem;
     color: rgba(255,255,255,0.82);
     line-height: 1.95;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 1.5rem;
     max-width: 540px;
     margin-left: auto;
@@ -963,7 +964,7 @@
     font-size: 0.88rem;
     color: rgba(255,255,255,0.8);
     margin-bottom: 1.2rem;
-    font-weight: 300;
+    font-weight: 400;
     word-break: keep-all;
   }
   .btn-white {
@@ -1191,7 +1192,7 @@ window.addEventListener('load', () => {
       <div class="hero-visual-inner">
         <span class="visual-icon">🌿</span>
         <div class="visual-title">「自分らしく生きる」を、共につくる。</div>
-        <div class="visual-body">障害や病気があっても、あきらめない暮らしを共に支えます。</div>
+        <div class="visual-body">障害や病気があっても、<br>あきらめない暮らしを共に支えます。</div>
       </div>
     </div>
     <div class="hero-float f1"><div class="fdot"></div>東京・埼玉全域で対応中</div>
@@ -1408,9 +1409,9 @@ window.addEventListener('load', () => {
       <div class="co-row">
         <div class="co-label">対応エリア</div>
         <div class="co-value-block">
-          東京都全域<br>
-          埼玉県全域<br>
-          <span class="co-note">※その他エリアもお気軽にご相談ください</span>
+          【埼玉県】桶川市・上尾市・北本市・鴻巣市・さいたま市・岩槻市・蓮田市・川越市・富士見市・草加市・八潮市・越谷市・蕨市 等<br>
+          【東京都】足立区・北区・葛飾区・荒川区・板橋区・豊島区 等<br>
+          <span class="co-note">※上記以外のエリアもお気軽にご相談ください</span>
         </div>
       </div>
       <div class="co-row">
@@ -1518,7 +1519,7 @@ window.addEventListener('load', () => {
         <div class="faq-q-text">対応エリアはどこですか？</div>
         <div class="faq-toggle">＋</div>
       </button>
-      <div class="faq-ans"><p>東京都全域・埼玉県全域に対応しています。その他のエリアもまずはご相談ください。状況によってご対応できる場合もございます。</p></div>
+      <div class="faq-ans"><p>【埼玉県】桶川市・上尾市・北本市・鴻巣市・さいたま市・岩槻市・蓮田市・川越市・富士見市・草加市・八潮市・越谷市・蕨市 等、【東京都】足立区・北区・葛飾区・荒川区・板橋区・豊島区 等に対応しています。上記以外のエリアもお気軽にご相談ください。</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q" onclick="toggleFaq(this)">
@@ -1606,7 +1607,10 @@ window.addEventListener('load', () => {
       </div>
       <div class="j-row">
         <div class="j-label">勤務地</div>
-        <div class="j-value">東京都足立区・埼玉県全域</div>
+        <div class="j-value-block">
+          【埼玉県】桶川市・上尾市・北本市・鴻巣市・さいたま市・岩槻市・蓮田市・川越市・富士見市・草加市・八潮市・越谷市・蕨市 等<br>
+          【東京都】足立区・北区・葛飾区・荒川区・板橋区・豊島区 等
+        </div>
       </div>
       <div class="j-row">
         <div class="j-label">資格補助</div>
