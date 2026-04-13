@@ -1432,7 +1432,7 @@ window.addEventListener('load', () => {
       </div>
       <div class="co-row">
         <div class="co-label">メール</div>
-        <div class="co-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="bed1ccd7cd90d3d590d6d1fed9d3dfd7d290ddd1d3">[email&#160;protected]</a></div>
+        <div class="co-value" id="co-email"></div>
       </div>
     </div>
   </div>
@@ -1648,13 +1648,13 @@ window.addEventListener('load', () => {
     <div class="contact-tel">📞 03-4296-3418</div>
     <div class="contact-hours">受付時間：平日 9:00〜17:00</div>
     <div class="contact-btns">
-      <a href="/cdn-cgi/l/email-protection#f9968b908ad79492d79196b99e94989095d79a9694" class="btn-white">サービスについて相談する</a>
+      <a id="btn-service" class="btn-white">サービスについて相談する</a>
       <a href="tel:0342963418" class="btn-outline-white">電話で問い合わせる</a>
     </div>
     <hr class="contact-divider">
     <p class="contact-recruit-note">💼 ヘルパー・スタッフとして働きたい方はこちら</p>
     <div class="contact-btns">
-      <a href="/cdn-cgi/l/email-protection#9cf3eef5efb2f1f7b2f4f3dcfbf1fdf5f0b2fff3f1a3efe9fef6f9ffe8a17a123d7b08347f1d377f1d387f1d187f1d3a7f1d327f1d167909137f1d18790c147f1e137f1d07" class="btn-white-accent">採用に応募・問い合わせる</a>
+      <a id="btn-recruit" class="btn-white-accent">採用に応募・問い合わせる</a>
     </div>
   </div>
 </section>
@@ -1665,6 +1665,18 @@ window.addEventListener('load', () => {
 </footer>
 
 <script>
+  // メールアドレスをJSで設定（Cloudflare難読化回避）
+  (function() {
+    var u = 'oris.mk.ho';
+    var d = 'gmail.com';
+    var addr = u + '@' + d;
+    var s = 'subject=' + encodeURIComponent('採用についてのお問い合わせ');
+    document.getElementById('btn-service').href = 'mailto:' + addr;
+    document.getElementById('btn-recruit').href = 'mailto:' + addr + '?' + s;
+    var el = document.getElementById('co-email');
+    if (el) el.textContent = addr;
+  })();
+
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }
